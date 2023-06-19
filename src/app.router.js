@@ -1,17 +1,5 @@
 
-
-
-// export const initApp =(app, express)=>{
-//     app.use(express.json())
-//     app.get('/', (req, res) => res.json('Hello World!'))
-// }
-
-
-
-
-
-
-// import AuthRouter from '../src/Modules/Auth/auth.router.js'
+import AuthRouter from '../src/Modules/Auth/auth.router.js'
 // import UserRouter from '../src/Modules/User/user.router.js'
 
 // import MessageRouter from '../src/Modules/Message/message.router.js'
@@ -22,7 +10,7 @@ const initApp = (app,express)=>{
         return res.status(200).json({message:"success connecting!"})
     })
 
-    // app.use('/auth', AuthRouter)
+    app.use('/auth', AuthRouter)
     // app.use('/auth', AuthRouter)
     // app.use('/user', UserRouter)
     // app.use('/message', MessageRouter)
