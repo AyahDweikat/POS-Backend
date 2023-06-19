@@ -3,6 +3,8 @@ import AuthRouter from '../src/Modules/Auth/auth.router.js'
 import UserRouter from '../src/Modules/User/user.router.js'
 
 import UnitsRouter from '../src/Modules/Unit/unit.router.js'
+import CategoryRouter from '../src/Modules/Category/category.router.js'
+
 
 const initApp = (app,express)=>{
     app.use(express.json())
@@ -13,6 +15,8 @@ const initApp = (app,express)=>{
     app.use('/auth', AuthRouter)
     app.use('/user', UserRouter)
     app.use('/unit', UnitsRouter)
+    app.use('/category', CategoryRouter)
+
 
 
 

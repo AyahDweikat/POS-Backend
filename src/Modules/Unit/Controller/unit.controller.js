@@ -1,8 +1,8 @@
 import unitModel from "../../../../DB/Model/unit.model.js";
-import userModel from "../../../../DB/model/User.model.js";
+import userModel from "../../../../DB/model/user.model.js";
 
 export const getUnits = async(req, res)=>{
-    const UnitList = await unitModel.find({userId:req.id})
+    const UnitList = await unitModel.find({userId:req.id}).select("_id unitOfMeasure baseUnit conversionFactor")
     res.status(200).json({message:"successs", UnitList})
 }
 
