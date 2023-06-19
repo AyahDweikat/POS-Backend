@@ -1,4 +1,5 @@
-import userModel from "../../DB/Model/user.model.js";
+
+import userModel from "../../DB/model/User.model.js";
 import { verifyToken } from "../services/generateAndVerify.js";
 
 
@@ -15,3 +16,7 @@ export const auth = async(req, res, next)=>{
         next()
     }
 }
+
+
+
+
