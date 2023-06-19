@@ -2,7 +2,7 @@
 import AuthRouter from '../src/Modules/Auth/auth.router.js'
 import UserRouter from '../src/Modules/User/user.router.js'
 
-// import MessageRouter from '../src/Modules/Message/message.router.js'
+import UnitsRouter from '../src/Modules/Unit/unit.router.js'
 
 const initApp = (app,express)=>{
     app.use(express.json())
@@ -12,7 +12,11 @@ const initApp = (app,express)=>{
 
     app.use('/auth', AuthRouter)
     app.use('/user', UserRouter)
-    // app.use('/message', MessageRouter)
+    app.use('/unit', UnitsRouter)
+
+
+
+    
     app.use('*', (req, res)=>{
         res.json({message:"page not found"})
     })
