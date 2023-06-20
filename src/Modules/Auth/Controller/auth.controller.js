@@ -1,5 +1,5 @@
 
-import userModel from "../../../../DB/model/user.model.js";
+import userModel from "../../../../DB/Model/user.model.js";
 import { generateToken, verifyToken } from "../../../services/generateAndVerify.js";
 import { sendEmail } from "../../../services/sendEmail.js";
 
