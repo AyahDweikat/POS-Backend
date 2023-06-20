@@ -1,5 +1,5 @@
 
-import userModel from "../../../../DB/model/user.model.js";
+import userModel from "../../../../DB/Model/user.model.js";
 import categoryModel from './../../../../DB/Model/category.model.js';
 
 export const getCategories = async(req, res)=>{

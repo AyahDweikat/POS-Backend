@@ -1,4 +1,4 @@
-import userModel from "../../../../DB/model/user.model.js";
+import userModel from "../../../../DB/Model/user.model.js";
 import cloudinary from "../../../services/cloudinary.js";
 
 export const getProfile=async (req, res)=>{
