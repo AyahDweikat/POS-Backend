@@ -5,7 +5,7 @@ import UserRouter from '../src/Modules/User/user.router.js'
 import UnitsRouter from '../src/Modules/Unit/unit.router.js'
 import CategoryRouter from '../src/Modules/Category/category.router.js'
 import ProductRouter from '../src/Modules/Product/product.router.js'
-
+import cartRouter from '../src/Modules/Cart/cart.router.js'
 
 const initApp = (app,express)=>{
     app.use(express.json())
@@ -17,6 +17,8 @@ const initApp = (app,express)=>{
     app.use('/unit', UnitsRouter)
     app.use('/category', CategoryRouter)
     app.use('/product', ProductRouter)
+    app.use('/cart', cartRouter)
+
 
 
 
