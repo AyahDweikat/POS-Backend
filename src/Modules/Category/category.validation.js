@@ -14,7 +14,7 @@ export const addCategorySchema = {
 export const deleteCategorySchema = {
   params: joi
     .object({
-      unitId: joi.string().required(),
+      categoryId: joi.string().required(),
     })
     .required(),
 };
@@ -31,7 +31,7 @@ export const updateCategorySchema = {
 
   params: joi
     .object({
-      unitId: joi.string().required(),
+      categoryId: joi.string().required(),
     })
     .required(),
 };
