@@ -21,6 +21,10 @@ export const addUnit = async(req, res)=>{
 
 export const deleteUnit = async(req, res)=>{
     const {unitId} = req.params;
+    const _unit  = await unitModel.findById({_id:unitId})
+    if(!_unit){
+        res.status(404).json({message:"unit is not found"})
+    }
     const deletedProcess = await unitModel.findByIdAndDelete({_id:unitId})
     if(!deletedProcess){
         res.status(404).json({message:"unit is not found"})
@@ -30,6 +34,10 @@ export const deleteUnit = async(req, res)=>{
 
 export const updateUnit = async(req, res)=>{
     const {unitId} = req.params;
+    const _unit  = await unitModel.findById({_id:unitId})
+    if(!_unit){
+        res.status(404).json({message:"unit is not found"})
+    }
     const {unitOfMeasure, baseUnit, conversionFactor} = req.body;
     const updatedProcess = await unitModel.findByIdAndUpdate({_id:unitId},{unitOfMeasure, baseUnit, conversionFactor}, {new:true} )
     res.status(200).json({message:"successs updated", updatedProcess})

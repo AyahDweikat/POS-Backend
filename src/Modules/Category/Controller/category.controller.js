@@ -21,17 +21,22 @@ export const addCategory = async(req, res)=>{
 }
 
 export const deleteCategory = async(req, res)=>{
-    const {unitId} = req.params;
-    const deletedProcess = await categoryModel.findByIdAndDelete({_id:unitId})
-    if(!deletedProcess){
-        res.status(404).json({message:"unit is not found"})
+    const {categoryId} = req.params;
+    const _category  = await categoryModel.findById({_id:categoryId})
+    if(!_category){
+        res.status(404).json({message:"category is not found"})
     }
+    const deletedProcess = await categoryModel.findByIdAndDelete({_id:categoryId})
     res.status(200).json({message:"successs", deletedProcess})
 }
 
 export const updateCategory = async(req, res)=>{
-    const {unitId} = req.params;
+    const {categoryId} = req.params;
+    const _category  = await categoryModel.findById({_id:categoryId})
+    if(!_category){
+        res.status(404).json({message:"category is not found"})
+    }
     const {category} = req.body;
-    const updatedProcess = await categoryModel.findByIdAndUpdate({_id:unitId},{category}, {new:true} )
+    const updatedProcess = await categoryModel.findByIdAndUpdate({_id:categoryId},{category}, {new:true} )
     res.status(200).json({message:"successs updated", updatedProcess})
 }

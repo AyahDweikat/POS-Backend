@@ -10,9 +10,8 @@ const router = Router()
 
 router.get('/getCategories', auth, asyncHandler(CategoryController.getCategories))
 router.post('/addCategory', auth,validationFun(validators.addCategorySchema), asyncHandler(CategoryController.addCategory))
-router.delete('/deleteCategory/:unitId', auth,validationFun(validators.deleteCategorySchema), asyncHandler(CategoryController.deleteCategory))
-router.patch('/updateCategory/:unitId', auth,validationFun(validators.updateCategorySchema), asyncHandler(CategoryController.updateCategory))
-
+router.delete('/deleteCategory/:categoryId', auth,validationFun(validators.deleteCategorySchema), asyncHandler(CategoryController.deleteCategory))
+router.patch('/updateCategory/:categoryId', auth,validationFun(validators.updateCategorySchema), asyncHandler(CategoryController.updateCategory))
 
 
 
