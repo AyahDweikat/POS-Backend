@@ -11,7 +11,7 @@ const cartSchema = new Schema({
         type:Number,
     },
     products:{
-        type:[{productId:Types.ObjectId, quantity:Number}],
+        type:[{productId:Types.ObjectId,productName:String, quantity:Number}],
     },
     userId:{
         type:Types.ObjectId,
