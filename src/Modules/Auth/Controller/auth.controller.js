@@ -17,7 +17,7 @@ export const signUp = async (req, res) => {
   }
   const hashPassword = hashFunction(password);
   const token = generateToken({email}, process.env.EMAIL_TOKEN)
-  const link = `http://localhost:3000/auth/confirmEmail/${token}`
+  const link = `https://posapp.onrender.com/auth/confirmEmail/${token}`
   await sendEmail(email,'confirm Email', `<a href='${link}' target="_blank">confirm email</a>`)
 
   const createUser = await userModel.create({
