@@ -2,7 +2,7 @@ import multer from "multer";
 
 export const HME=(err, req, res, next)=>{
     if(err){
-        return res.status(400).json({message:"multer error", err})
+        return res.status(400).json({message:"multer error", error :err.stack})
     } else {
         next()
     }
